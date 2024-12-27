@@ -1,0 +1,55 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                      &kp Q          &kp W        &kp E         &kp R         &kp T                       &kp Y        &kp U         &kp I         &kp O          &kp P   
+                      &mt LSHFT A    &mt LCTRL S  &mt LCMD D    &mt LALT F    &kp G                       &kp H        &mt LALT J    &mt LCMD K    &mt LCTRL L    &mt LSHFT SEMI
+                      &mt LCTRL Z    &mt LCMD X   &mt LALT C    &kp V         &kp B                       &kp N        &kp M         &kp COMMA     &kp DOT        &kp FSLH
+                                                                &kp LBKT      &lt 1 SPACE                 &lt 2 ENTER  &kp BSPC
+            >;
+        };
+
+        sym_layer {
+            bindings = <
+                      &kp N1         &kp N2       &kp N3        &kp N4        &kp N5                      &kp N6       &kp N7        &kp N8        &kp N9         &kp N0   
+                      &mt LSHFT EXCL &mt LCTRL AT &mt LCMD HASH &mt LALT DLLR &kp PRCNT                   &kp CARET    &mt LALT AMPS &mt LCMD STAR &mt LCTRL LPAR &mt LSHFT RPAR
+                      &kp F1         &kp F2       &kp F3        &kp F4        &kp F5                      &kp GRAVE    &kp APOS      &kp MINUS     &kp EQUAL      &kp BSLH
+                                                                &kp RBKT      &trans                      &mo 3        &kp DEL
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+                      &none          &kp PG_UP    &kp UP        &kp PG_DN     &kp C_VOL_UP                &none        &none         &kp INS       &none          &kp PSCRN
+                      &none          &kp LEFT     &kp DOWN      &kp RIGHT     &kp C_VOL_DN                &none        &kp LALT      &kp LCMD      &kp LCTRL      &kp LSHFT
+                      &none          &kp HOME     &kp ESC       &kp END       &kp C_MUTE                  &none        &none         &none         &none          &none
+                                                                &kp RBKT      &lt 3 TAB                   &trans       &kp DEL
+            >;
+        };
+
+        fn_layer {
+            bindings = <
+                      &kp F1         &kp F2       &kp F3        &kp F4        &kp F5                      &kp F6       &kp F7        &kp F8        &kp F9         &kp F10
+                      &kp F11        &kp F12      &none         &none         &sys_reset                  &sys_reset   &none         &none         &none          &none
+                      &none          &none        &none         &none         &bootloader                 &bootloader  &none         &none         &none          &none
+                                                                &none         &trans                      &trans       &none
+            >;
+        };
+
+    };
+};
